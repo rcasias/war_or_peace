@@ -2,9 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require '../lib/card'
 
-jack = Card.new(:heart, "Jack", 11)
-puts jack.suit
-require 'pry'; binding.pry
 
 class CardTest < Minitest::Test
   def setup
