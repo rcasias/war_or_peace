@@ -1,4 +1,3 @@
-require './card'
 
 class Deck
   attr_reader :cards
@@ -27,10 +26,3 @@ class Deck
   end
 
 end
-
-deck = Deck.new
-
-deck.add_card_to_deck(card1)
-deck.add_card_to_deck(card2)
-deck.add_card_to_deck(card3)
-deck.add_card_to_deck(card4)
