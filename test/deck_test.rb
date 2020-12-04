@@ -55,8 +55,11 @@ class DeckTest < Minitest::Test
   end
 
   def test_percent_high_ranking
-    skip
+    card1 = Card.new(:diamond, 'Queen', 12)
+    card2 = Card.new(:spade, '3', 3)
+    card3 = Card.new(:heart, 'Ace', 14)
     cards = setup()
+    deck = Deck.new(cards)
     high_card = []
 
     if card1.rank >= 11
@@ -69,7 +72,7 @@ class DeckTest < Minitest::Test
       high_card << card3
     end
 
-    assert_equal (high_card / cards.length) , (2/3)
+    assert_equal (high_card.length / deck.cards.length) , (2/3)
   end
 
   def test_remove_card
