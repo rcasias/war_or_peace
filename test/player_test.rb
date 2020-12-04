@@ -21,6 +21,7 @@ class PlayerTest < Minitest::Test
   end
 
   def test_player_exists
+    player1 = Player.new("Clarisa", @deck)
     assert_instance_of Player, @player
   end
 
