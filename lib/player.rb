@@ -7,6 +7,12 @@ class Player
   end
 
   def has_lost?
+    deck.cards.empty?
   end
+
+  def remove_card_from_deck
+    return @cards.shift
+  end
+
 
 end

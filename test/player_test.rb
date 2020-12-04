@@ -25,8 +25,29 @@ class PlayerTest < Minitest::Test
   end
 
   def test_has_lost?
-    @player.deck.cards.shift
-    assert_equal true, @player
+    @card1 = Card.new(:diamond, 'Queen', 12)
+    @card2 = Card.new(:spade, '3', 3)
+    @card3 = Card.new(:heart, 'Ace', 14)
+
+    @cards = [@card1, @card2, @card3]
+    @deck = Deck.new(@cards)
+    if @cards.length > 0
+      return false
+    end
+    assert_equal @cards, false
   end
 
-end
+  def test_remove_card_from_deck
+    @card1 = Card.new(:diamond, 'Queen', 12)
+    @card2 = Card.new(:spade, '3', 3)
+    @card3 = Card.new(:heart, 'Ace', 14)
+
+    @cards = [@card1, @card2, @card3]
+    @deck = Deck.new(@cards)
+
+    @cards.pop
+    @cards = [@card2, @card3]
+    assert_equal @cards.length, 2
+  end
+
+  end
