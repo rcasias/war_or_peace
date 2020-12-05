@@ -32,10 +32,10 @@ class PlayerTest < Minitest::Test
 
     @cards = [@card1, @card2, @card3]
     @deck = Deck.new(@cards)
-    if @cards.length > 0
-      return false
-    end
-    assert_equal @cards, false
+    # if @cards.length > 0
+    #   return false
+    # end
+    assert_equal @player.has_lost?, false
   end
 
   def test_remove_card_from_deck

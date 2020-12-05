@@ -6,6 +6,7 @@ require './lib/player'
 #=> true
 card1 = Card.new(:heart, 'Jack', 11)
 #=> #<Card:0x007fa3edaa0df0 @rank=11, @suit=:heart, @value="Jack"> card2 = Card.new(:heart, '10', 10)
+card2 = Card.new(:heart, '10', 10)    
 #=> #<Card:0x007fa3eda519a8 @rank=10, @suit=:heart, @value="10">
 card3 = Card.new(:heart, '9', 9)
 #=> #<Card:0x007fa3ed98d9b8 @rank=9, @suit=:heart, @value="9">

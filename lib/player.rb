@@ -10,7 +10,7 @@ class Player
     deck.cards.empty?
   end
 
-  def remove_card_from_deck
+  def remove_card
     return @cards.shift
   end
 
