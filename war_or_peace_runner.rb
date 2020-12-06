@@ -2,6 +2,7 @@ require './lib/card'
 require './lib/deck'
 require './lib/player'
 require './lib/turn'
+require './lib/play_game'
 
 
 def create_standard_deck
@@ -82,15 +83,13 @@ def create_standard_deck
 end
 
 shuffled_arrays = create_standard_deck
-p shuffled_arrays.length
-p shuffled_arrays[0].length
+
 player_deck1 = Deck.new(shuffled_arrays[0])
 player_deck2 = Deck.new(shuffled_arrays[1])
 
+player1 = Player.new("Megan", player_deck1)
+player2 = Player.new("Aurora", player_deck2)
 
 
-
-
-# puts ""
-# puts "> "
-# height = $stdin.gets.chomp
+game = PlayGame.new(player1, player2)
+game.start
