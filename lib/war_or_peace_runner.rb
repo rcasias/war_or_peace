@@ -70,15 +70,27 @@ def create_standard_deck
   standard_deck << Card.new(:diamond, "2", 2)
   standard_deck << Card.new(:club, "2", 2)
   standard_deck << Card.new(:spade, "2", 2)
-  return standard_deck
+
+  shuffled_deck = standard_deck.shuffle
+
+  player_deck1 = []
+
+  (0..25).each do |card|
+    player_deck1 << shuffled_deck.delete_at(0)
+  end
+  return [shuffled_deck, player_deck1]
 end
 
-standard_deck = create_standard_deck
-p standard_deck.length
+shuffled_arrays = create_standard_deck
+p shuffled_arrays.length
+p shuffled_arrays[0].length
+player_deck1 = Deck.new(shuffled_arrays[0])
+player_deck2 = Deck.new(shuffled_arrays[1])
 
-shuffled_deck = standard_deck.shuffle
-p shuffled_deck
+
+
+
 
 # puts ""
 # puts "> "
-# height = $stdin.gets.chomp.to_i
+# height = $stdin.gets.chomp
