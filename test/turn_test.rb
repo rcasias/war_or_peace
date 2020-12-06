@@ -11,6 +11,11 @@ def turn_test_exists
   player1 = Player.new("Clarisa", deck1)
   player2 = Player.new("Aurora", deck2)
   deck = Deck.new(cards)
+  card1 = Card.new(:diamond, 'Queen', 12)
+  card2 = Card.new(:spade, '3', 3)
+  card3 = Card.new(:heart, 'Ace', 14)
+
+  cards = [card1, card2, card3]
   assert_instance_of Turn, turn
 end
 
@@ -22,12 +27,6 @@ def test_two_players_exist
   assert_equal player2, turn.player2
 end
 
-# def test_player1_turn
-#   player
-# end
-#
-# def tesxt_player2_turn
-# end
 
 def spoils_of_war
   assert_equal [], turn.spoils_of_war
