@@ -28,7 +28,7 @@ class Deck
     return (high_ranking_cards_length / array_length).round(4) * 100
   end
 
-  def remove_card()
+  def remove_card
     # removes the top card of the Deck
     # The 'Top' card is the first index of the cards array (@cards[0])
     return @cards.shift
