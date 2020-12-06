@@ -83,13 +83,11 @@ def create_standard_deck
 end
 
 shuffled_arrays = create_standard_deck
-
 player_deck1 = Deck.new(shuffled_arrays[0])
 player_deck2 = Deck.new(shuffled_arrays[1])
 
 player1 = Player.new("Megan", player_deck1)
 player2 = Player.new("Aurora", player_deck2)
-
 
 game = PlayGame.new(player1, player2)
 game.start
