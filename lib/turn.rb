@@ -37,6 +37,30 @@ class Turn
     end
   end
 
+  def pile_cards
+    if type == :basic
+      if @spoils_of_war << @player1.deck.cards[0]
+         @spoils_of_war << @player2.deck.cards[0]
+      end
+    elsif type == :war
+      if @spoils_of_war << @player1.deck.cards[0]
+         @spoils_of_war << @player1.deck.cards[1]
+         @spoils_of_war << @player1.deck.cards[2]
+         @spoils_of_war << @player2.deck.cards[0]
+         @spoils_of_war << @player2.deck.cards[1]
+         @spoils_of_war << @player2.deck.cards[2]
+      end
+    else type == :mutually_assured_destruction
+      if @player1.deck.cards.delete_at[0]
+         @player1.deck.cards.delete_at[1]
+         @player1.deck.cards.delete_at[2]
+         @player2.deck.cards.delete_at[0]
+         @player2.deck.cards.delete_at[1]
+         @player2.deck.cards.delete_at[2]
+      end
+    end
+  end
+
 #start turn with basic turn type
 #place two cards (one from each player's hand into pile_cards aka spoils_of_war)
   # def pile_cards
