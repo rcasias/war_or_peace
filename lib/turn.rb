@@ -59,6 +59,7 @@ class Turn
   end
 
   def award_spoils(winner)
+    @spoils_of_war.shuffle!
     @spoils_of_war.each do |cards|
       winner.deck.add_card(cards)
     end
