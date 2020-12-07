@@ -41,7 +41,7 @@ class PlayGame
         p "Turn #{counter}: *mutually assured destruction* 6 cards removed from play"
       end
 
-      break if counter == 1000
+      break if counter == 1000000
     end
     if player1.has_lost?
       p "*-*-*-* #{player2.name} has won the game! *-*-*-*"
